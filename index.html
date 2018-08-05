@@ -84,15 +84,68 @@
   </div>
 </div>
 
+<head>
+<script>
+function quiz(){
+	var score = 0;
+	// to get another question's value, change the name=
+	const q1 = document.querySelector("[name=Q1]:checked").value;
+  if (q1=="yes"){
+  	score = score + 2;
+		}
+
+		const q2 = document.querySelector("[name=Q2]:checked").value;
+	if (q2=="85%"){
+			score = score +2;
+		}
+
+		const q3 = document.querySelector("[name=Q3]:checked").value;
+	if (q3=="50%"){
+			score = score +2
+		}
+
+		const q4 = document.querySelector("[name=Q4]:checked").value;
+	if (q4=="animals are distressed, agitated, and often die"){
+			score = score +2
+		}
+
+		const q5 = document.querySelector("[name=Q5]:checked").value;
+  if (q5=="650,000"){
+		score = score +2
+	}
+
+if (score==10){
+	alert("Congratulations, you got everything correct!")
+		}
+	else if (score==8){
+		alert("You got one question wrong! Go check our website to brush up on some facts.")
+		}
+		else if (score==6){
+	alert("You got two questions wrong! Go check our website to brush up on some facts.")
+}
+else if (score==4){
+	alert("You got three questions wrong! Go check our website to brush up on some facts.")
+}
+else if (score==2){
+	alert("You got FOUR questions wrong! Go check our website to brush up on some facts.")
+}
+	else{
+		alert("You got all the questions wrong :( GO TO OUR WEBSITE IMMEDIATLY!)")
+	}
+  return false;
+}
 
 
+
+</script>
+</head>
 
   <h2 class="text-center">How Educated Are You On Anti Animal Cruelty?</h2>
 
   <div align="center" class = "quiz_box">
     <h1 class = "big"> This quiz will determine the extent of your knowledge of animal cruelty in cosmetics and fashion </h1>
     <br>
-        <form method="POST" action="/results">
+        <form onsubmit="return quiz()">
     <h1 id = “question1”> 1. Have you ever heard of animal cruelty and it's effects?: </h1>
     <label><input type = "radio" name = "Q1" value = "yes">yes</label>
     <label><input type = "radio" name = "Q1" value = "no">no</label>
@@ -182,3 +235,4 @@
 
 </body>
 </html>
+
